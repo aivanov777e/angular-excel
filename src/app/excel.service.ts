@@ -31,7 +31,7 @@ export class ExcelService {
       [2008, 1, "Toyota ", "Toyota Prius", 217, 2.2],
       [2008, 1, "Skoda ", "Skoda Octavia", 216, 2.2],
       [2008, 1, "Peugeot ", "Peugeot 308", 135, 1.4],
-      [2008, 2, "Ford ", "Ford Mondeo", 624, 5.9],
+      [2008, 2, "Ford ", "Ford Mondeo Ford Mondeo Ford Mondeo Ford Mondeo Ford Mondeo Ford Mondeo Ford Mondeo Ford Mondeo Ford Mondeo ", 624, 5.9],
       [2008, 2, "Volkswagen ", "Volkswagen Passat", 551, 5.2],
       [2008, 2, "Volkswagen ", "Volkswagen Golf", 488, 4.6],
       [2008, 2, "Volvo ", "Volvo V70", 392, 3.7],
@@ -99,6 +99,10 @@ export class ExcelService {
     );
     worksheet.getColumn(3).width = 30;
     worksheet.getColumn(4).width = 30;
+
+    // ok:    "exceljs": "^1.15.0",
+    worksheet.getCell('D15').alignment = { wrapText: true };
+
     worksheet.addRow([]);
     //Footer Row
     let footerRow = worksheet.addRow(['This is system generated excel sheet.']);
